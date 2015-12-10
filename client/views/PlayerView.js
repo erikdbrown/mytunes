@@ -6,16 +6,11 @@ var PlayerView = Backbone.View.extend({
   el: '<audio controls autoplay />',
 
   initialize: function() {
+    // this is listening for the DOM element ending versus the SongModel ended() invocation
     this.$el.on('ended', (function() {
       this.model.ended();
     }).bind(this));
   },
-
-  // checkSong: function() {
-  //   if (this.el.ended) {
-  //     this.model.dequeue();
-  //   }
-  // },
 
   setSong: function(song) {
     this.model = song;

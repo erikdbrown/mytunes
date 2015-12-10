@@ -11,7 +11,7 @@ var SongQueue = Songs.extend({
     });
 
     this.on('ended', function(){
-      console.log('just ended the song')
+      
       this.models[0].dequeue();
     }, this);
 
