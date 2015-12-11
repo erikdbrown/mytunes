@@ -5,7 +5,8 @@ var SongModel = Backbone.Model.extend({
     artist: '',
     title: '',
     url: '',
-    count: 0
+    count: 0,
+    upVotes: false
   },
 
   play: function() {
@@ -24,6 +25,17 @@ var SongModel = Backbone.Model.extend({
   ended: function() {
     this.trigger('ended', this);
     this.set('count', this.get('count') + 1);
+  }, 
+
+  toggleVote: function() {
+    this.trigger('upvote', this);
+    if (!this.upVotes) {
+      this.set('upVotes', true);
+      return true;
+    } else {
+      this.set('upVotes', false);
+      return false;
+    }
   }
 
 });
