@@ -19,5 +19,10 @@ var songData = [
    url: "http://soundbible.com/mp3/fighter_plane_squadron-Mike_Koenig-1917709101.mp3",
    title: "If Your Girl Only Knew",
    artist: "Aaliyah",
+ }, 
+ {
+   url: "http://soundbible.com/mp3/Zymbel_The_Real_Horst-1113884951.mp3",
+   title: "This is a new song",
+   artist: "Erik and Hridhya",
  }
 ];

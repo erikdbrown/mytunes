@@ -8,17 +8,17 @@ var SongQueue = Songs.extend({
       }
     });
 
-    this.on('ended', function(){
-      // if (this.length >= 1) {
-      //   // this.shift();
-      // }
-    }, this);
+    // this.on('ended', function(){
+    //   // if (this.length >= 1) {
+    //   //   // this.shift();
+    //   // }
+    // }, this);
 
-    // this.on('dequeue', function() {
-    //   // this.shift(); // we don't want this
-    //   // remove the song that is triggered dequeue
-    //   // this.playFirst();
-    // }, this)
+    // // this.on('dequeue', function() {
+    // //   // this.shift(); // we don't want this
+    // //   // remove the song that is triggered dequeue
+    // //   // this.playFirst();
+    // // }, this)
   },
 
   playFirst: function() {

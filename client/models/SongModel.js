@@ -4,7 +4,8 @@ var SongModel = Backbone.Model.extend({
   defaults: {
     artist: '',
     title: '',
-    url: ''
+    url: '',
+    count: 0
   },
 
   play: function() {

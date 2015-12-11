@@ -21,11 +21,12 @@ var AppModel = Backbone.Model.extend({
     }, this);
 
     params.library.on('ended', function(song){
-      // if (this.get('songQueue').length > 1) {
+      song.set('count', song.get('count') + 1);
       this.get('songQueue').remove(song); 
-      // }
       if (this.get('songQueue').length >= 1) {
         this.get('songQueue').playFirst();
+      } else if (this.get('songQueue').length === 0) {
+        this.set('currentSong', null);
       }
     }, this);
   }
