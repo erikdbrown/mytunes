@@ -11,22 +11,15 @@ var LibraryEntryView = Backbone.View.extend({
                         <td><a href = "#" class = "enqueue">Add to queue</a></td>'),
 
   initialize: function() {
-    this.model.on('change', this.render, this);
+    this.model.on('change:count', this.render, this);
   },
 
   events: {
-    // 'click .play': function() {
-    //   this.model.play();
-    // },
 
+    // listening for a click on the "Add to queue" link on the LibEntry
     'click .enqueue': function(){
       this.model.enqueue();
     }
-
-    // 'click' : function(){
-    //   // this.model.play();
-    //   this.model.enqueue();
-    // }
     
   },
 
