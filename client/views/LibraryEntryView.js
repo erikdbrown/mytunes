@@ -9,7 +9,7 @@ var LibraryEntryView = Backbone.View.extend({
                         <td><%= title %></td> \
                         <td><%= count %></td> \
                         <td><a href = "#" class = "enqueue">Add to queue</a></td> \
-                        <td><img class="star" src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-20.png"></td>' 
+                        <td><img class="star" src=<%= src %>></td>' 
                         ),
 
   initialize: function() {
@@ -23,13 +23,8 @@ var LibraryEntryView = Backbone.View.extend({
       this.model.enqueue();
     },
 
-    'click img': function() {
-      var star = this.model.toggleVote();
-      if (star) {
-        this.$('.star').attr('src', "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-20.png")
-      } else {
-        this.$('.star').attr('src', "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-20.png")      
-      }
+    'click .star': function() {
+      this.model.toggleVote();
     }
     
   },

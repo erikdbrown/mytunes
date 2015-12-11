@@ -6,7 +6,8 @@ var SongModel = Backbone.Model.extend({
     title: '',
     url: '',
     count: 0,
-    upVotes: false
+    upVotes: false,
+    src: "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-20.png"
   },
 
   play: function() {
@@ -28,13 +29,10 @@ var SongModel = Backbone.Model.extend({
   }, 
 
   toggleVote: function() {
-    this.trigger('upvote', this);
-    if (!this.upVotes) {
-      this.set('upVotes', true);
-      return true;
+    if (this.get('src') === "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-20.png") {
+      this.set('src', "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-20.png");
     } else {
-      this.set('upVotes', false);
-      return false;
+      this.set('src', "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-20.png");
     }
   }
 
